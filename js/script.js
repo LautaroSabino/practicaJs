@@ -24,7 +24,7 @@ console.log(userName);
 console.log(userLastName);
 console.log('La edad del usuario dentro de un año será, mdda: ' + userAgeNextYear); */
 
-let numero = parseInt(prompt('Ingresá un número y te digo si es par o impar'));
+/* let numero = parseInt(prompt('Ingresá un número y te digo si es par o impar'));
 let resultado;
 
 if(numero%2==0){
@@ -33,4 +33,12 @@ if(numero%2==0){
     resultado = "Impar"
 }
 
-alert(resultado)
+alert(resultado); */
+
+let edad = 17.5;
+
+if(edad>=18){
+    console.log('Usted puede pasar, pues viejo');
+} else{
+    console.log('usted no puede pasar, vuelva a su casa con sus padres XD');
+}
