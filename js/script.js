@@ -35,10 +35,19 @@ if(numero%2==0){
 
 alert(resultado); */
 
-let edad = 17.5;
-
+/* let edad = 17.5;
 if(edad>=18){
     console.log('Usted puede pasar, pues viejo');
 } else{
     console.log('usted no puede pasar, vuelva a su casa con sus padres XD');
+} */
+
+let numeroA = 15;
+let numeroB = 35;
+let boolean = (numeroA > numeroB);
+
+if(boolean){
+    console.log('la variable booleana es true');
+} else{
+    console.log('la variable booleana es false');
 }
