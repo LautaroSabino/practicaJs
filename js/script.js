@@ -42,7 +42,7 @@ if(edad>=18){
     console.log('usted no puede pasar, vuelva a su casa con sus padres XD');
 } */
 
-let numeroA = 15;
+/* let numeroA = 15;
 let numeroB = 35;
 let boolean = (numeroA > numeroB);
 
@@ -50,4 +50,15 @@ if(boolean){
     console.log('la variable booleana es true');
 } else{
     console.log('la variable booleana es false');
-}
+} */
+
+/* let userAge = parseInt(prompt('Ingrese su edad:'));
+
+if(userAge > 18){
+    alert('Usted puede pasar');
+} else if(userAge > 13){
+    alert('Puede pasar, pero acompañado por un adulto');
+} else {
+    alert('Tomate el palo, rancio');
+} */
+
