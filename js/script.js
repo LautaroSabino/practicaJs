@@ -3,15 +3,22 @@
 /* esta es la forma de comentar en dos lineas
 ves? son dos lineas o mas */
 
+//VARIABLES STRING, NUMBER, BOOLEAN. ---------------------------------------------
+
 /* let userName = "Lautaro";
 const userLastName = "Sabino";
 let age = 34;
 let value = true;
 let quote = 'esta es una cadena de caracteres'
 
+
+// OPERACIONES CON VARIABLES. ---------------------------------------------------
+
 let numA = 25;
 let numB = 35;
 let resultado = numA % numB;
+
+// CONCATENACIÓN. ----------------------------------------------------------------
 
 let userNameComplete = userName + " " + userLastName; */
 
@@ -24,6 +31,8 @@ console.log(userName);
 console.log(userLastName);
 console.log('La edad del usuario dentro de un año será, mdda: ' + userAgeNextYear); */
 
+//ESTRUCTURA IF, IF ELSE. -----------------------------------------------------------
+
 /* let numero = parseInt(prompt('Ingresá un número y te digo si es par o impar'));
 let resultado;
 
@@ -34,6 +43,7 @@ if(numero%2==0){
 }
 
 alert(resultado); */
+
 
 /* let edad = 17.5;
 if(edad>=18){
@@ -62,6 +72,8 @@ if(userAge > 18){
     alert('Tomate el palo, rancio');
 } */
 
+// BUCLES E ITERACIONES ---------------------------------------------------------
+
 /* for (let i = 1; i <= 3; i++) {
 
     document.write('Usted es el jefe de los minisuper?' +i);
@@ -75,9 +87,94 @@ for(let i = 0; i <=10; i++){
 
 } */
 
-for (let i = 1; i <= 10; i++) {
+/* for (let i = 1; i <= 10; i++) {
     if (i == 5) {
         break;
     }
     console.log('Esta vuelta vale: ' + i);
 }
+
+for (let i= 0; i<=12;i++){
+    if (i==4){
+        continue;
+    }
+    alert(i);
+} */
+
+/* let repetir = true;
+
+while (repetir) {
+    console.log('Soy un bucle while que hará explotar tu navegador');
+    repetir = false;
+}
+
+let edad = parseInt(prompt('Ingresá tu edad, capo: '));
+
+while(edad < 13){
+    alert('Usted no puede pasar, a llorar al campito');
+    edad = parseInt(prompt('Ingresá tu edad, capo: '));
+}
+ */
+
+/* let edad;
+
+do{
+    edad = parseInt(prompt('Ingresá tu edad, capo: '));
+}while (edad < 13)
+ */
+
+// ESTRUCTURA SWICHT ------------------------------------------------------------
+
+/* let color = prompt('Elija un color primario: ');
+
+switch (color) {
+    case 'azul':
+        alert('Elegiste el color azul')
+        break;
+
+    case 'rojo':
+        alert('Elegiste el color rojo')
+        break;
+
+    case 'amarillo':
+        alert('Elegiste el color amarillo')
+        break;    
+
+    default:
+        alert('No elegiste un color primario')
+        break;
+} */
+
+// EJEMPLO DE UN PROGRAMA DE CAJERO AUTOMÁTICO COMBINANDO LO APRENDIDO HASTA EL MOMENTO. ------------------------------------------------------------------------
+
+/* let saldo = 1500;
+let opcion = prompt('Ingresá tu opción:\n 1- Consultar saldo. \n 2- Hacer retiro de dinero. \n 3- Hacer un Depósito. \n 4- Presione x para finalizar');
+
+while (opcion != 'x') {
+    switch (opcion) {
+        case '1':
+            alert('Tu saldo es: $' + saldo);
+            break;
+
+        case '2':
+            let retiro = parseFloat(prompt('Ingrese la cantidad a retirar'));
+            if (saldo >= retiro) {
+                saldo = saldo - retiro;
+                alert('Listo! Tu nuevo saldo es de: $' + saldo);
+            } else {
+                alert('Su saldo es insuficiente para esta transacción');
+            }
+            break;
+
+        case '3':
+            let deposito = parseFloat(prompt('Ingrese la cantidad a depositar'));
+            saldo = saldo + deposito;
+            alert('Listo! tu nuevo saldo es de: $' + saldo);
+            break;
+
+        default:
+            alert('elegiste una opción inválida');
+            break;
+    }
+    opcion = prompt('Ingresá tu opción:\n 1- Consultar saldo. \n 2- Hacer retiro de dinero. \n 3- Hacer un Depósito. \n 4- Presione x para finalizar');
+} */
