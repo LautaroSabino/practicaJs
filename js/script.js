@@ -62,3 +62,22 @@ if(userAge > 18){
     alert('Tomate el palo, rancio');
 } */
 
+/* for (let i = 1; i <= 3; i++) {
+
+    document.write('Usted es el jefe de los minisuper?' +i);
+}
+
+document.write('Gracias, vuelvan pronto');
+
+for(let i = 0; i <=10; i++){
+    
+    document.write(i + 'x5 es igual a: ' + i*5);
+
+} */
+
+for (let i = 1; i <= 10; i++) {
+    if (i == 5) {
+        break;
+    }
+    console.log('Esta vuelta vale: ' + i);
+}
