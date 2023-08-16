@@ -205,7 +205,7 @@ function saludarConNombre(nombre){
 
 saludarConNombre(nombre); */
 
-function sumar(numA, numB) {
+/* function sumar(numA, numB) {
     let resultado = numA + numB;
     document.write(resultado + '\n');
 }
@@ -216,4 +216,38 @@ sumar(300, 550);
 let unNum = parseInt(prompt('primer número: '));
 let otroNum = parseInt(prompt('primer número: '));
 
-sumar(unNum, otroNum);
+sumar(unNum, otroNum); */
+
+//aca lo complejisamos para una calculadora
+
+/* function calcular(numA, signo, numB) {
+    let resultado = 0;
+    switch (signo) {
+        case '+':
+            resultado = numA + numB;
+            break;
+
+        case '-':
+            resultado = numA - numB;
+            break;
+
+        case '*':
+            resultado = numA * numB;
+            break;
+
+        case '/':
+            resultado = numA / numB;
+            break;
+
+        default:
+            break;
+    }
+    console.log(resultado);
+}
+
+calcular(10, '+', 20);
+calcular(10, '-', 5);
+calcular(10, '*', 3);
+calcular(10, '/', 2); */
+
+//HACER LA FUNCION CON EL RETURN
