@@ -178,3 +178,42 @@ while (opcion != 'x') {
     }
     opcion = prompt('Ingresá tu opción:\n 1- Consultar saldo. \n 2- Hacer retiro de dinero. \n 3- Hacer un Depósito. \n 4- Presione x para finalizar');
 } */
+
+// FUNCIONES CON NOMBRE, ANONIMAS Y FLECHA. -------------------------------------------
+
+// Función con nombre
+/* function saludar() {
+    document.write('Hola, Mundo!');
+}
+
+saludar(); 
+
+function sumar(){
+    let num = 1+2;
+    document.write(num);
+}
+
+sumar(); 
+
+// Función con nombre y parámetro (muy básica). 
+
+/* let nombre = prompt('Ingresá tu nombre completo')
+
+function saludarConNombre(nombre){
+    alert('Buenos días ' + nombre);
+}
+
+saludarConNombre(nombre); */
+
+function sumar(numA, numB) {
+    let resultado = numA + numB;
+    document.write(resultado + '\n');
+}
+
+sumar(3000, 4500);
+sumar(300, 550);
+
+let unNum = parseInt(prompt('primer número: '));
+let otroNum = parseInt(prompt('primer número: '));
+
+sumar(unNum, otroNum);
