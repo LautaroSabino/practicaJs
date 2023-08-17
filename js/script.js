@@ -268,7 +268,7 @@ mostrarMensaje(sumar(3, 5));
 
 // Función anónimas y flecha
 
-const suma = function (a, b) {
+/* const suma = function (a, b) {
     return a + b
 }
 const resta = function (a, b) {
@@ -276,4 +276,20 @@ const resta = function (a, b) {
 }
 
 document.write(suma(10, 15));
-document.write(resta(15, 5));
+document.write(resta(15, 5)); */
+
+//en el siguiente ejemplo hago un cálculo utilizando los parámetros.
+// la función flecha de una sola línea ya tiene un return implicito.  
+
+/* const suma = (a, b) => a + b
+const resta = (a, b) => a - b
+const iva = x => x * 0.21
+
+let precioProducto = 500;
+let descuento = 50;
+
+let nuevoPrecio = resta(suma(precioProducto, iva(precioProducto)), descuento);
+console.log(nuevoPrecio);
+
+console.log(suma(10, 20));
+console.log(resta(30, 10)); */
