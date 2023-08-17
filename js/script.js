@@ -182,6 +182,7 @@ while (opcion != 'x') {
 // FUNCIONES CON NOMBRE, ANONIMAS Y FLECHA. -------------------------------------------
 
 // Función con nombre
+
 /* function saludar() {
     document.write('Hola, Mundo!');
 }
@@ -249,5 +250,30 @@ calcular(10, '+', 20);
 calcular(10, '-', 5);
 calcular(10, '*', 3);
 calcular(10, '/', 2); */
+/* 
+function sumar(numA, numB) {
+    let suma = numA + numB;
+    return suma;
+}
 
-//HACER LA FUNCION CON EL RETURN
+function mostrarMensaje(mensaje){
+    console.log(mensaje);
+}
+
+mostrarMensaje(sumar(3, 5));
+ */
+
+
+/* en el ejemplo de arriba, al utilizar el return nos devuelve el valor de la variable y en la funcion mostrarMensaje solo mostramos lo que le pasemos por el parámetro. A la hora de llamar a las funciones, ponemos la funcion sumar dentro del parámetro de la funcion mostrarMensaje ya que el valor de la variable muere dentro de la otra funcion pero la devuelve con el return. El return solo devuelve el resultado y termina con la operación. Si se escribe algo luego de un return, no se ejecuta*/
+
+// Función anónimas y flecha
+
+const suma = function (a, b) {
+    return a + b
+}
+const resta = function (a, b) {
+    return a - b
+}
+
+document.write(suma(10, 15));
+document.write(resta(15, 5));
