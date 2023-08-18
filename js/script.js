@@ -3,7 +3,7 @@
 /* esta es la forma de comentar en dos lineas
 ves? son dos lineas o mas */
 
-//VARIABLES STRING, NUMBER, BOOLEAN. ---------------------------------------------
+//VARIABLES: STRING, NUMBER, BOOLEAN. ---------------------------------------------
 
 /* let userName = "Lautaro";
 const userLastName = "Sabino";
@@ -71,6 +71,20 @@ if(userAge > 18){
 } else {
     alert('Tomate el palo, rancio');
 } */
+
+
+// Operador de comparación lógica. 
+// en el ejemplo de abajo se puede ir resolviendo tipo ecuación para llegar siempre a true or false.
+
+/* let num1 = 12;
+let num2 = 24;
+let num3 = 25;
+let num4 = 92;
+let num5 = 91;
+
+let op = (num5 > num2 && num4 < num3) || (!(num1 === num2) || num3 != num3);
+
+document.write(op) */
 
 // BUCLES E ITERACIONES ---------------------------------------------------------
 
@@ -293,3 +307,4 @@ console.log(nuevoPrecio);
 
 console.log(suma(10, 20));
 console.log(resta(30, 10)); */
+
