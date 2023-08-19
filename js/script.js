@@ -310,17 +310,7 @@ console.log(resta(30, 10)); */
 
 // Ejercicio para hacer un programa de prueba utilizando lo aprendido hasta el momento (sin funciones).
 
-/* let palitoDeAgua = 0.6;
-let palitoDeCrema = 1;
-let heladix = 1.6;
-let heladovich = 1.7;
-let helardo = 1.8;
-let heladoConfites = 1.8;
-let cuartoKilo = 2.9;
- */
-
-
-let dineroRoberto = parseFloat(prompt('Hola, Roberto, ¿Cuánto dinero tienes?:'));
+/* let dineroRoberto = parseFloat(prompt('Hola, Roberto, ¿Cuánto dinero tienes?:'));
 
 if (dineroRoberto > 0.6 && dineroRoberto <1){
     alert('Comprate el helado de palito de agua');
@@ -371,7 +361,7 @@ if (dineroCofla > 0.6 && dineroCofla <1){
 } else if(dineroCofla >= 1.7 && dineroCofla < 1.8){
     alert('Comprate el heladovich');
     alert('Y te sobran: ' + (dineroCofla - 1.7) + ' USD');
-} else if(dineroCofla >= 1.8 && dineroCofla < 2.9){
+} else if(dineroCofla >= 1.8 && dineroCofla <b 2.9){
     alert('Comprate el helardo');
     alert('Y te sobran: ' + (dineroCofla - 1.8) + ' USD');
 } else if(dineroCofla >= 2.9){
@@ -380,5 +370,79 @@ if (dineroCofla > 0.6 && dineroCofla <1){
 } else {
     alert('Lo siento, no podes comprarte nada. Volá de acá.')
 }
+ */
 
+//ARRAYS COMUNES Y ASOCIATIVOS -------------------------------------------------
+
+/*let auto = ["blanco", "Onix ltz", "AA442NP", "Chevrolet", 5, true];
+
+//document.write(auto[5])
+
+let auto2 = {
+    color: 'blanco',
+    modelo: 'Onix ltz',
+    patente: 'AA442NP',
+    marca: 'Chevrolet',
+    puertas: 5,
+    seguro: true
+}
+
+//document.write(auto2['seguro'])
+
+let color = auto2['color'];
+let modelo = auto2['modelo'];
+let patente = auto2['patente'];
+let marca = auto2['marca'];
+let puertas = auto2['puertas'];
+let seguro = auto2['seguro'];
+
+let frase = `El color del auto es: <b> ${color}, 
+</b> <br> El modelo es: <b> ${modelo}, </b> <br> La patente es: <b> ${patente}, </b> <br> La marca es: <b> ${marca}, </b> <br> El modelo tiene: <b> ${puertas} </b> puertas, <br> El seguro está activado: <b> ${seguro}</b>.` */
+
+//document.write(frase);
+
+// For in y For of. ---------------------------------------------------------------------------------
+
+/* let auto = ["blanco", "Onix ltz", "AA442NP", "Chevrolet", 5, true];
+
+for (let caracteristica in auto){
+    document.write(caracteristica + "<br>");
+}
+
+document.write("<br>");
+
+for (let caracteristica in auto){
+    document.write(auto[caracteristica] + "<br>");
+}
+
+document.write("<br>");
+
+for (let caracteristica of auto){
+    document.write(caracteristica + "<br>");
+}
+ */
+
+//de esta forma, con los bucles, accedemos a la información por ejemplo en este array y lo recorremos. Reniendo en cuenta que con el For in llamamos a la posición(indice) y con el for of al elemento en si. En el caso del for in, segundo ejemplo, podemos acceder al elemento llamando al array con los corchetes. Tener en cuenta que son variables que viven y mueren dentro del bloque. 
+
+//También podemos recorrer un con un bucle dentro de otro bucle, eso cuando tenemos arrays dentro de un array, como en el caso que sigue: 
+
+let array1 = ['Octavio', 'Franco', 'Lucía', 'Martin'];
+let array2 = ['Fabricio', 'Delia', 'Helena', 'Yoko', array1, 'Kevin'];
+
+forBusqueda:
+for (let array in array2){
+    if (array == 4){
+        for (let array of array1){
+            //break forBusqueda;
+            //continue forBusqueda;
+            document.write(array + "<br>");
+        
+        } 
+    } else {
+        document.write(array2[array] + "<br>");
+    }
+}
+
+// tan simple como eso XD
+//En este ejemplo usé la sentencia break junto con el nombre para que termine el bucle, puedo probarlo con o sin, por esa está comentado. Al ponerle nombre al bucle puedo acceder a él desde cualquier parte. También funciona con la sentencia continue. Esto es la sentencia label, es ponerle un nombre al bucle. 
 
