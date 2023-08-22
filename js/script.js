@@ -293,7 +293,7 @@ document.write(suma(10, 15));
 document.write(resta(15, 5)); */
 
 //en el siguiente ejemplo hago un cálculo utilizando los parámetros.
-// la función flecha de una sola línea ya tiene un return implicito.  
+// la función flecha de una sola línea ya tiene un return implicito y no hace falta ponerle parèntesis al parametro.  
 
 /* const suma = (a, b) => a + b
 const resta = (a, b) => a - b
@@ -309,6 +309,8 @@ console.log(suma(10, 20));
 console.log(resta(30, 10)); */
 
 // Ejercicio para hacer un programa de prueba utilizando lo aprendido hasta el momento (sin funciones).
+
+//En este caso hacemos un programa ficticio para mostrarle a tres clientes las opciones que pueden comprarse dependiendo del dinero ingresado, y luego para mostrarle el vuelto a uno de ellos que lo solicitò. 
 
 /* let dineroRoberto = parseFloat(prompt('Hola, Roberto, ¿Cuánto dinero tienes?:'));
 
@@ -426,7 +428,7 @@ for (let caracteristica of auto){
 
 //También podemos recorrer un con un bucle dentro de otro bucle, eso cuando tenemos arrays dentro de un array, como en el caso que sigue: 
 
-let array1 = ['Octavio', 'Franco', 'Lucía', 'Martin'];
+/* let array1 = ['Octavio', 'Franco', 'Lucía', 'Martin'];
 let array2 = ['Fabricio', 'Delia', 'Helena', 'Yoko', array1, 'Kevin'];
 
 forBusqueda:
@@ -441,8 +443,73 @@ for (let array in array2){
     } else {
         document.write(array2[array] + "<br>");
     }
-}
+} */
 
 // tan simple como eso XD
 //En este ejemplo usé la sentencia break junto con el nombre para que termine el bucle, puedo probarlo con o sin, por esa está comentado. Al ponerle nombre al bucle puedo acceder a él desde cualquier parte. También funciona con la sentencia continue. Esto es la sentencia label, es ponerle un nombre al bucle. 
 
+// Ejercicio para hacer un programa de prueba utilizando lo aprendido hasta el momento (con funciones).
+
+//En este caso hacemos un programa ficticio para validar la edad de ingreso a una fiesta con la condiciòn del que primero que ingresa post 2AM no paga entrada. 
+
+/*let free = false;
+
+ const validarCliente = (time)=>{
+    let edad = parseInt(prompt('Ingresà tu edad:'));
+    if (edad >= 18){
+        if (time > 2 && time < 7 && !free){
+            alert('Podes pasar gratis por ser el primero.');
+            free = true;
+        } else{
+            alert(`Son las ${time} hs. Podes pasar, pero debes abonar entrada.`);
+        }
+        
+    } else {
+        alert('Lo siento, usted es menor de edad, no puede pasar.');
+    }
+}
+
+validarCliente(11);
+validarCliente(12);
+validarCliente(1);
+validarCliente(2);
+validarCliente(3);
+validarCliente(5);
+validarCliente(6.30); */
+
+//En este caso hacemos un programa para incoporar alumnos a un sistema de asistencias y luego mostrar cuales estàn aprobados y desaprobados. 
+
+let cantidad = parseInt(prompt('Ingrese cantidad de alumnos:'));
+let alumnosTotales = [];
+
+for (i = 0; i < cantidad; i++) {
+    alumnosTotales[i] = [prompt('Ingrese nombre de alumno' + (i + 1)), 0]
+}
+
+const tomarAsistencia = (nombre, p) => {
+    let presencia = prompt(nombre);
+    if (presencia == 'p' || presencia == 'P') {
+        alumnosTotales[p][1]++;
+    }
+}
+
+for (i = 0; i < 30; i++) {
+    for (alumno in alumnosTotales) {
+        tomarAsistencia(alumnosTotales[alumno][0], alumno);
+    }
+}
+
+for (alumno in alumnosTotales) {
+    let resultado = `${alumnosTotales[alumno][0]}: <br>
+    /__________________ presentes: ${alumnosTotales[alumno][1]}  <br>
+    ____________________ ausentes: ${30 - alumnosTotales[alumno][1]} 
+    `;
+
+    if (30 - alumnosTotales[alumno][1] > 18){
+        resultado+= `Reprobado por insistencia <br>`;
+    } else {
+        resultado+= `<br>`;
+    }
+
+    document.write(resultado);
+}
