@@ -479,7 +479,7 @@ validarCliente(6.30); */
 
 //En este caso hacemos un programa para incoporar alumnos a un sistema de asistencias y luego mostrar cuales estàn aprobados y desaprobados. 
 
-let cantidad = parseInt(prompt('Ingrese cantidad de alumnos:'));
+/* let cantidad = parseInt(prompt('Ingrese cantidad de alumnos:'));
 let alumnosTotales = [];
 
 for (i = 0; i < cantidad; i++) {
@@ -512,4 +512,70 @@ for (alumno in alumnosTotales) {
     }
 
     document.write(resultado);
+} */
+
+//OBJETOS ---------------------------------------------------------------------
+
+/* let persona = {
+    nombre: 'Lautaro',
+    apellido: 'Sabino',
+    edad: 34,
+    altura: 1.91,
+    signo: 'géminis',
+    genero: 'masculino'
 }
+
+document.write(persona.nombre + `<br>`);
+document.write(persona.apellido + `<br>`);
+document.write(persona.edad + `<br>`);
+document.write(persona.altura + `<br>`);
+document.write(persona.signo + `<br>`);
+document.write(persona.genero + `<br>`);
+
+const auto1 = {
+    marca: 'Chevrolet',
+    modelo: 'Onix LTZ',
+    anio: 2016,
+    color: 'blanco',
+    puertas: 5,
+    seguro: true,
+
+    tocarbocina: function(){document.write('piiiiiiiiii')}
+
+    }
+
+
+console.log(auto1['marca']);
+console.log(auto1['anio']);
+console.log(auto1['puertas']);
+console.log(auto1['seguro']);
+
+console.log(auto1);
+
+auto1.color = 'negro';
+
+console.log(auto1.color);
+
+auto1.tocarbocina(); */
+
+// Función constructora de objetos (se pone en mayuscula) -------------
+
+function Auto (marca, modelo, anio, patente, color, puertas, seguro){
+    this.marca = marca;
+    this.modelo = modelo;
+    this.anio = anio;
+    this.patente = patente;
+    this.color = color;
+    this.puertas = puertas;
+    this.seguro = seguro;
+
+    this.hablar = function(){document.write('Hola! soy un/una ' + this.modelo)};
+}
+
+const auto2 = new Auto('Fiat', 'Toro', 'AA442NP', 2020, 'blanco', 5, true );
+
+auto2.hablar();
+console.log(auto2);
+
+
+
