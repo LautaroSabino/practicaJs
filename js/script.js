@@ -560,7 +560,7 @@ auto1.tocarbocina(); */
 
 // Función constructora de objetos (se pone en mayuscula) -------------
 
-function Auto (marca, modelo, anio, patente, color, puertas, seguro){
+/* function Auto (marca, modelo, anio, patente, color, puertas, seguro){
     this.marca = marca;
     this.modelo = modelo;
     this.anio = anio;
@@ -577,5 +577,41 @@ const auto2 = new Auto('Fiat', 'Toro', 'AA442NP', 2020, 'blanco', 5, true );
 auto2.hablar();
 console.log(auto2);
 
+console.log();("color" in auto2)
 
+for (const propiedad in auto2){
+    document.write(auto2[propiedad] + `<br>`);
+} */
 
+// clase constructora ----------------------
+
+class Producto {
+
+    constructor(nombre, precio) {
+        this.nombre = nombre.toUpperCase();
+        this.precio = parseFloat(precio);
+        this.vendido = false;
+    }
+
+    sumarIva() {
+        this.precio = this.precio * 1.21
+    }
+
+    vender(){
+        this.vendido = true;
+    }
+}
+
+const producto1 = new Producto('manzana', 250);
+const producto2 = new Producto('caramelos', 80);
+
+producto1.sumarIva();
+
+document.write(producto1.precio + `<br>`)
+
+document.write(producto1.vendido + `<br>`)
+
+producto1.vender();
+
+document.write(producto1.vendido + `<br>`)
+document.write(`el precio de ${producto1.nombre} es ${producto1.precio}`  + `<br>`)
