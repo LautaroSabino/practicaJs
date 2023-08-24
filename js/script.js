@@ -376,9 +376,16 @@ if (dineroCofla > 0.6 && dineroCofla <1){
 
 //ARRAYS COMUNES Y ASOCIATIVOS -------------------------------------------------
 
-/*let auto = ["blanco", "Onix ltz", "AA442NP", "Chevrolet", 5, true];
+/*const arrayVacío = [];
+const carrito = [];
 
-//document.write(auto[5])
+const numerosUnaCifra = [1,2,3,4,5,6,7];
+
+let auto = ["blanco", "Onix ltz", "AA442NP", "Chevrolet", 5, true];
+
+document.write(auto[5] + `<br>`)
+console.log(auto);
+console.log(auto[2]);
 
 let auto2 = {
     color: 'blanco',
@@ -389,7 +396,7 @@ let auto2 = {
     seguro: true
 }
 
-//document.write(auto2['seguro'])
+document.write(auto2['marca'] + `<br>`)
 
 let color = auto2['color'];
 let modelo = auto2['modelo'];
@@ -399,34 +406,56 @@ let puertas = auto2['puertas'];
 let seguro = auto2['seguro'];
 
 let frase = `El color del auto es: <b> ${color}, 
-</b> <br> El modelo es: <b> ${modelo}, </b> <br> La patente es: <b> ${patente}, </b> <br> La marca es: <b> ${marca}, </b> <br> El modelo tiene: <b> ${puertas} </b> puertas, <br> El seguro está activado: <b> ${seguro}</b>.` */
+</b> <br> El modelo es: <b> ${modelo}, </b> <br> La patente es: <b> ${patente}, </b> <br> La marca es: <b> ${marca}, </b> <br> El modelo tiene: <b> ${puertas} </b> puertas, <br> El seguro está activado: <b> ${seguro}</b>.` 
 
-//document.write(frase);
+document.write(frase); */
 
-// For in y For of. ---------------------------------------------------------------------------------
+// For, For in y For of. ---------------------------------------------------------------------------------
 
 /* let auto = ["blanco", "Onix ltz", "AA442NP", "Chevrolet", 5, true];
 
-for (let caracteristica in auto){
-    document.write(caracteristica + "<br>");
+console.log(auto.length);
+
+for (let i = 0; i < auto.length; i++) {
+    document.write(`La caracteristica numero ${i+1} del auto es ${auto[i]} y su indice en el array es ${i} ` + `<br>`);
 }
 
-document.write("<br>");
+document.write(`<br>`);
+
+const numeros = [10,20,30,40,50,60,70];
+for (let i = 0; i < numeros.length; i++) {
+    const resultado = numeros[i]*100;
+    document.write(`el resultado es ${resultado} <br>`)
+}
+
+document.write(`<br>`);
 
 for (let caracteristica in auto){
-    document.write(auto[caracteristica] + "<br>");
+    document.write(caracteristica + `<br>`);
+}
+
+document.write(`<br>`);
+
+for (let caracteristica in auto){
+    document.write(auto[caracteristica] + `<br>`);
 }
 
 document.write("<br>");
 
 for (let caracteristica of auto){
-    document.write(caracteristica + "<br>");
+    document.write(caracteristica + `<br>`);
 }
- */
 
-//de esta forma, con los bucles, accedemos a la información por ejemplo en este array y lo recorremos. Reniendo en cuenta que con el For in llamamos a la posición(indice) y con el for of al elemento en si. En el caso del for in, segundo ejemplo, podemos acceder al elemento llamando al array con los corchetes. Tener en cuenta que son variables que viven y mueren dentro del bloque. 
+const mixto = ['Pepito', 37, false, {apellido: 'perez', DNI: 34345476}, true];
 
-//También podemos recorrer un con un bucle dentro de otro bucle, eso cuando tenemos arrays dentro de un array, como en el caso que sigue: 
+for (let i = 0; i < mixto.length; i++) {
+    console.log(mixto[i]);
+    
+} */
+
+//de esta forma, con los bucles, accedemos a la información por ejemplo en este array y lo recorremos. Teniendo en cuenta que con el For in llamamos a la posición(indice) y con el for of al elemento en si. En el caso del for in, segundo ejemplo, podemos acceder al elemento llamando al array con los corchetes. Tener en cuenta que son variables que viven y mueren dentro del bloque. 
+
+//También podemos recorrer un Array con un bucle dentro de otro bucle, eso cuando tenemos arrays dentro de un array, como en el caso que sigue: 
 
 /* let array1 = ['Octavio', 'Franco', 'Lucía', 'Martin'];
 let array2 = ['Fabricio', 'Delia', 'Helena', 'Yoko', array1, 'Kevin'];
@@ -450,11 +479,20 @@ for (let array in array2){
 
 // Ejercicio para hacer un programa de prueba utilizando lo aprendido hasta el momento (con funciones).
 
-//En este caso hacemos un programa ficticio para validar la edad de ingreso a una fiesta con la condiciòn del que primero que ingresa post 2AM no paga entrada. 
+//Metodos y propiedades de los arrays----------------------------------------
+
+//LENGTH sirve para recorrer e iterar el indice del array, y tmabien para limitarlo dentro de un for como en los ejemplos anteriores. 
+
+const array1 = ['Mario', 1, false, 34, 'José'];
+
+array1.length
+console.log(array1);
+
+//EJERCICIO. En este caso hacemos un programa ficticio para validar la edad de ingreso a una fiesta con la condiciòn del que primero que ingresa post 2AM no paga entrada. 
 
 /*let free = false;
 
- const validarCliente = (time)=>{
+const validarCliente = (time)=>{
     let edad = parseInt(prompt('Ingresà tu edad:'));
     if (edad >= 18){
         if (time > 2 && time < 7 && !free){
@@ -585,11 +623,12 @@ for (const propiedad in auto2){
 
 // clase constructora ----------------------
 
-class Producto {
+/* class Producto {
 
-    constructor(nombre, precio) {
+    constructor(nombre, precio, categoria) {
         this.nombre = nombre.toUpperCase();
         this.precio = parseFloat(precio);
+        this.categoria = categoria;
         this.vendido = false;
     }
 
@@ -602,8 +641,8 @@ class Producto {
     }
 }
 
-const producto1 = new Producto('manzana', 250);
-const producto2 = new Producto('caramelos', 80);
+const producto1 = new Producto('manzana', 250, 'almacen');
+const producto2 = new Producto('caramelos', 80, 'golosinas');
 
 producto1.sumarIva();
 
@@ -614,4 +653,4 @@ document.write(producto1.vendido + `<br>`)
 producto1.vender();
 
 document.write(producto1.vendido + `<br>`)
-document.write(`el precio de ${producto1.nombre} es ${producto1.precio}`  + `<br>`)
+document.write(`el precio de ${producto1.nombre} es ${producto1.precio}`  + `<br>`) */
