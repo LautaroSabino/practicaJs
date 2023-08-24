@@ -483,10 +483,56 @@ for (let array in array2){
 
 //LENGTH sirve para recorrer e iterar el indice del array, y tmabien para limitarlo dentro de un for como en los ejemplos anteriores. 
 
-const array1 = ['Mario', 1, false, 34, 'José'];
+/* const array1 = ['Mario', 1, false, 34, 'José'];
 
 array1.length
 console.log(array1);
+ */
+
+//PUSH, sirve para agregar un elemento a un array. Se agregan a lo ùltimo del array. 
+
+/* const array1 = ['Mario', 1, false, 34, 'José'];
+
+console.log(array1);
+array1.push(true, 44, 'Sonia')
+console.log(array1);
+ */
+
+//unshift, sirve para agregar un elemento a un array, pero al principio. ¡Por que? porque puedo XD
+
+/* const array1 = ['Mario', 1, false, 34, 'José'];
+
+console.log(array1);
+array1.unshift(true, 44, 'Sonia')
+console.log(array1); */
+
+//Si queremos eliminar el primer elemento del array utilizamos shift(), va al indice cero. Si queremos eliminar el ùltimo elemento, pop(). No hace falta pasarle un paràmetro. 
+
+/* const array1 = ['Mario', 1, false, 34, 'José'];
+
+console.log(array1);
+array1.shift()
+console.log(array1);
+array1.pop()
+console.log(array1); */
+
+//splice() nos permite eliminar uno o varios elementos del array en cualquier posiciòn. Funciona con dos parametros: el primero es el indice donde se ubica el metodo para trabajar, el segundo es la cantidad de elementos a eliminar desde esa posiciòn.  
+
+/* const array1 = ['Mario', 1, false, 34, 'José'];
+
+console.log(array1);
+array1.splice(1, 2)
+console.log(array1); */
+
+//join() nos permite eliminar uno o varios elementos del array en cualquier posiciòn. Funciona con dos parametros: el primero es el indice donde se ubica el metodo para trabajar, el segundo es la cantidad de elementos a eliminar desde esa posiciòn.  
+
+const array1 = ['Mario', 1, false, 34, 'José'];
+
+console.log(array1);
+array1.splice(1, 2)
+console.log(array1);
+
+
 
 //EJERCICIO. En este caso hacemos un programa ficticio para validar la edad de ingreso a una fiesta con la condiciòn del que primero que ingresa post 2AM no paga entrada. 
 
