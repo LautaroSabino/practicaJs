@@ -524,15 +524,48 @@ console.log(array1);
 array1.splice(1, 2)
 console.log(array1); */
 
-//join() nos permite eliminar uno o varios elementos del array en cualquier posiciòn. Funciona con dos parametros: el primero es el indice donde se ubica el metodo para trabajar, el segundo es la cantidad de elementos a eliminar desde esa posiciòn.  
+//join() nos permite hacer un string con todos los elementos del Array y nos deja elegir el caracter que va a separar. Me devuelve un string y yo lo puedo guardar en otro lado, por ejemplo, para imprimir.
 
-const array1 = ['Mario', 1, false, 34, 'José'];
+/* const array1 = ['Mario', 1, false, 34, 'José'];
 
 console.log(array1);
-array1.splice(1, 2)
+let imprimible = array1.join('-')
+console.log(imprimible); */
+
+//concat() nos permite reunir dos array en uno. Primero quedan los elementos al que se le aplica el método.  
+
+/* const array1 = ['Mario', 1, false, 34, 'José'];
+const array2 = ['Lucía', 'Martín', 'Octavio', 'Franco']
+
 console.log(array1);
+console.log(array2);
+const nombres = array1.concat(array2)
+console.log(nombres); */
 
+//slice() nos permite copiar una parte de un array para agregarlo a otro. Necesita dos parámetros, desde donde hasta donde (teniendo en cuenta que no incluye el indice que se indica hasta donde).  
 
+/* const array = ['Lucía', 'Martín', 'Octavio', 'Franco']
+
+console.log(array);
+const nombresMasculinos = array.slice(1, 4)
+console.log(nombresMasculinos);
+console.log(array); // el array original no se modifica.
+//si le pongo un solo parámetro, me copia todo el resto.  */
+
+//indexof() me devuelve el indice del elemento que selecciono. 
+
+/* const array = ['Lucía', 'Martín', 'Octavio', 'Franco']
+
+console.log(array.indexOf('Martín'));
+console.log(array.indexOf('Franco'));
+//si se coloca algo que no existe, te pone -1. */
+
+//includes() me devuelve true o false dependiendo de si el elemento por el que pregunto, está en el array o no. 
+
+/* const array = ['Lucía', 'Martín', 'Octavio', 'Franco']
+
+console.log(array.includes('Martín'));
+console.log(array.includes('Jensen')); */
 
 //EJERCICIO. En este caso hacemos un programa ficticio para validar la edad de ingreso a una fiesta con la condiciòn del que primero que ingresa post 2AM no paga entrada. 
 
@@ -667,7 +700,7 @@ for (const propiedad in auto2){
     document.write(auto2[propiedad] + `<br>`);
 } */
 
-// clase constructora ----------------------
+// clase constructora ---------------------------------------------
 
 /* class Producto {
 
@@ -700,3 +733,46 @@ producto1.vender();
 
 document.write(producto1.vendido + `<br>`)
 document.write(`el precio de ${producto1.nombre} es ${producto1.precio}`  + `<br>`) */
+
+// arrays con objetos. -------------------------------------
+
+let librosHarryPotter = [{
+    id: 1,
+    titulo: 'Harry Potter y la piedra filosofal',
+    fecha: 1997
+}, {
+    id: 2,
+    titulo: 'Harry Potter y la cámara secreta',
+    fecha: 1998
+}, {
+    id: 3,
+    titulo: 'Harry Potter y el prisionero de Azkaban',
+    fecha: 1999
+}, {
+    id: 4,
+    titulo: 'Harry Potter y el cáliz de fuego',
+    fecha: 2000
+}, {
+    id: 5,
+    titulo: 'Harry Potter y la orden del fenix',
+    fecha: 2001
+}, {
+    id: 6,
+    titulo: 'Harry Potter y el misterio del principe',
+    fecha: 2002
+}, {
+    id: 7,
+    titulo: 'Harry Potter y las reliquias de la muerte',
+    fecha: 2003
+}];
+
+
+
+for (const libro of librosHarryPotter) {
+    console.log(libro.titulo, libro.fecha); 
+    if (libro.fecha == 2001){
+        break;
+    }   
+}
+
+// en este ejemplo recorro el array, pido que me imprima por console.log los libros dentro del array y también metí un condicional para que termine la busqueda, por ejemplo, en 2001. 
