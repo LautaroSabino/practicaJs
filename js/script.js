@@ -702,7 +702,7 @@ for (const propiedad in auto2){
 
 // clase constructora ---------------------------------------------
 
-/* class Producto {
+class Producto {
 
     constructor(nombre, precio, categoria) {
         this.nombre = nombre.toUpperCase();
@@ -715,7 +715,7 @@ for (const propiedad in auto2){
         this.precio = this.precio * 1.21
     }
 
-    vender(){
+    vender() {
         this.vendido = true;
     }
 }
@@ -732,11 +732,29 @@ document.write(producto1.vendido + `<br>`)
 producto1.vender();
 
 document.write(producto1.vendido + `<br>`)
-document.write(`el precio de ${producto1.nombre} es ${producto1.precio}`  + `<br>`) */
+document.write(`el precio de ${producto1.nombre} es ${producto1.precio}` + `<br>`)
+
+// ahora trabajamos con class y extends. Fijarse como con una nueva clase extendida, el objeto puede heredar lo de otra clase más nuevos atributos. --------------
+
+/* class Perfume extends Producto{
+    constructor(nombre, precio, genero){
+        super(nombre, precio);
+        this.genero = genero;
+    }
+}
+
+const perfume1 = new Perfume('Very Irrestible', 14000, 'masculino');
+
+perfume1.sumarIva()
+document.write(perfume1.precio + `<br>`)
+document.write(`el precio de ${perfume1.nombre} es ${perfume1.precio} y es de género ${perfume1.genero} ` + `<br>`)
+
+
+ */
 
 // arrays con objetos. -------------------------------------
 
-let librosHarryPotter = [{
+/* let librosHarryPotter = [{
     id: 1,
     titulo: 'Harry Potter y la piedra filosofal',
     fecha: 1997
@@ -773,6 +791,9 @@ for (const libro of librosHarryPotter) {
     if (libro.fecha == 2001){
         break;
     }   
-}
+} */
 
 // en este ejemplo recorro el array, pido que me imprima por console.log los libros dentro del array y también metí un condicional para que termine la busqueda, por ejemplo, en 2001. 
+
+//EJERCICIO aplicando objetos. Programa para identificar una compra entre varios teléfonos. 
+
