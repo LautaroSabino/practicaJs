@@ -702,7 +702,7 @@ for (const propiedad in auto2){
 
 // clase constructora ---------------------------------------------
 
-class Producto {
+/* class Producto {
 
     constructor(nombre, precio, categoria) {
         this.nombre = nombre.toUpperCase();
@@ -732,7 +732,7 @@ document.write(producto1.vendido + `<br>`)
 producto1.vender();
 
 document.write(producto1.vendido + `<br>`)
-document.write(`el precio de ${producto1.nombre} es ${producto1.precio}` + `<br>`)
+document.write(`el precio de ${producto1.nombre} es ${producto1.precio}` + `<br>`) */
 
 // ahora trabajamos con class y extends. Fijarse como con una nueva clase extendida, el objeto puede heredar lo de otra clase más nuevos atributos. --------------
 
@@ -795,5 +795,91 @@ for (const libro of librosHarryPotter) {
 
 // en este ejemplo recorro el array, pido que me imprima por console.log los libros dentro del array y también metí un condicional para que termine la busqueda, por ejemplo, en 2001. 
 
-//EJERCICIO aplicando objetos. Programa para identificar una compra entre varios teléfonos. 
+//EJERCICIO aplicando objetos y extends. Programa para identificar una compra entre varios teléfonos. 
 
+class Celular {
+    constructor(color, peso, tamaño, resoluCamara, memoRam) {
+        this.color = color;
+        this.peso = peso;
+        this.tamaño = tamaño;
+        this.resoluCamara = resoluCamara;
+        this.memoRam = memoRam;
+        this.encendido = false;
+    }
+
+    botonEncendido() {
+        if (this.encendido == false) {
+            alert('El celular ha encendido!');
+            this.encendido = true;
+        } else {
+            alert('celular apagado');
+            this.encendido = false;
+        }
+    }
+
+    reiniciar() {
+        if (this.encendido == true) {
+            alert('El celular se ha reiniceado!');
+        } else {
+            alert('el celular está apagado');
+        }
+    }
+
+    tomarFoto() {
+        alert(`se tomó una foto con una resolución de: ${this.resoluCamara}`)
+    }
+
+    grabarVideo() {
+        alert(`se está grabando un video con una resolución ${this.resoluCamara}`)
+    }
+
+    infoMobile() {
+        return `
+        color: <b> ${this.color} </b><br>
+        Peso: <b> ${this.peso} </b><br>
+        Tamaño: <b> ${this.tamaño} </b><br>
+        Memoria RAM: <b> ${this.memoRam} </b><br>
+        Resolución de cámara: <b> ${this.resoluCamara} </b><br>
+        `;
+    }
+
+}
+
+class CeluAltaGama extends Celular{
+    constructor(color, peso, tamaño, resoluCamara, memoRam, rdce){
+        super(color, peso, tamaño, resoluCamara, memoRam);
+        this.resoluCamaraExtra = rdce;
+    }
+
+    grabarLento(){
+        alert('Estás grabando en cámara lenta');
+    }
+
+    reconoFacial(){
+        alert('Vamos a comenzar un reconocimiento facial');
+    }
+
+    infoAltaGama(){
+        return this.infoMobile() + `Resolución cámara trasera es de ${this.resoluCamaraExtra} <br>`
+    }
+}
+
+const celular1 = new Celular('rojo', '150g', '5 pulg', 'Full HD', '2GB');
+const celular2 = new Celular('blanco', '190g', '4.8 pulg', 'Full HD', '1.8GB');
+const celular3 = new Celular('negro', '140g', '4 pulg', 'Full HD', '2GB');
+const celularAltaGama1 = new CeluAltaGama('plateado', '140g', '4 pulg', 'full HD', '3GB', '4K');
+const celularAltaGama2 = new CeluAltaGama('dorado', '140g', '4 pulg', 'Full HD', '3GB', '4K');
+
+/* celular1.botonEncendido();
+celular1.grabarVideo();
+celular1.tomarFoto();
+celular1.reiniciar();
+celular1.botonEncendido(); */
+
+document.write(`
+${celularAltaGama1.infoAltaGama()} <br>
+${celularAltaGama2.infoAltaGama()} <br>
+`)
+
+/* celularAltaGama1.grabarLento();
+celularAltaGama2.reconoFacial(); */
