@@ -797,7 +797,7 @@ for (const libro of librosHarryPotter) {
 
 //EJERCICIO aplicando objetos y extends. Programa para identificar una compra entre varios teléfonos. 
 
-class Celular {
+/* class Celular {
     constructor(color, peso, tamaño, resoluCamara, memoRam) {
         this.color = color;
         this.peso = peso;
@@ -870,16 +870,56 @@ const celular3 = new Celular('negro', '140g', '4 pulg', 'Full HD', '2GB');
 const celularAltaGama1 = new CeluAltaGama('plateado', '140g', '4 pulg', 'full HD', '3GB', '4K');
 const celularAltaGama2 = new CeluAltaGama('dorado', '140g', '4 pulg', 'Full HD', '3GB', '4K');
 
-/* celular1.botonEncendido();
+celular1.botonEncendido();
 celular1.grabarVideo();
 celular1.tomarFoto();
 celular1.reiniciar();
-celular1.botonEncendido(); */
+celular1.botonEncendido();
 
 document.write(`
 ${celularAltaGama1.infoAltaGama()} <br>
 ${celularAltaGama2.infoAltaGama()} <br>
 `)
 
-/* celularAltaGama1.grabarLento();
+celularAltaGama1.grabarLento();
 celularAltaGama2.reconoFacial(); */
+
+// FUNCIONES DE ORDEN SUPERIOR ----------------------------------------------
+// Son funciones que pasan otra función como parámetro (kill me). 
+
+//En el primer ejemplo la funcion porCadaUno llama a una función escrita por fuera. 
+
+/* function porCadaUno (arr, fn){
+    for (element of arr){
+        fn(element);
+    }
+}
+
+function cuadrado(num){
+    let resultado = num*num;
+    document.write(resultado + `<br>`);
+}
+
+function cubo(num){
+    let resultado = num*num*num;
+    document.write(resultado + `<br>`);
+}
+
+const numeros = [1,2,3,4,5,6];
+
+porCadaUno(numeros, cuadrado);
+document.write(`<br>`)
+porCadaUno(numeros, cubo);
+
+// En el segundo ejemplo, la función flecha la escribimos directamente dentro de la funcion porCadaUno. 
+
+const duplicado = [];
+
+porCadaUno(numeros, (element)=>{
+    duplicado.push(element*2)
+})
+
+document.write(duplicado + `<br>`)
+console.log(duplicado); */
+
+//METODOS DE BUSCA Y TRANSFORMACION -----------------------------------------------------------------------------------
