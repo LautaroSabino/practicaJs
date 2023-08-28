@@ -923,3 +923,43 @@ document.write(duplicado + `<br>`)
 console.log(duplicado); */
 
 //METODOS DE BUSCA Y TRANSFORMACION -----------------------------------------------------------------------------------
+
+const numeros = [1, 2, 3, 4, 5, 6];
+
+numeros.forEach((num) => {
+    document.write(num + `<br>`);
+})
+
+let librosHarryPotter = [{
+    id: 1,
+    titulo: 'Harry Potter y la piedra filosofal',
+    fecha: 1997
+}, {
+    id: 2,
+    titulo: 'Harry Potter y la cámara secreta',
+    fecha: 1998
+}, {
+    id: 3,
+    titulo: 'Harry Potter y el prisionero de Azkaban',
+    fecha: 1999
+}, {
+    id: 4,
+    titulo: 'Harry Potter y el cáliz de fuego',
+    fecha: 2000
+}, {
+    id: 5,
+    titulo: 'Harry Potter y la orden del fenix',
+    fecha: 2001
+}, {
+    id: 6,
+    titulo: 'Harry Potter y el misterio del principe',
+    fecha: 2002
+}, {
+    id: 7,
+    titulo: 'Harry Potter y las reliquias de la muerte',
+    fecha: 2003
+}];
+
+librosHarryPotter.forEach((num) => {
+    document.write(num.titulo + num.fecha +`<br>`);
+})
