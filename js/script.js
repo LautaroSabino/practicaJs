@@ -922,9 +922,11 @@ porCadaUno(numeros, (element)=>{
 document.write(duplicado + `<br>`)
 console.log(duplicado); */
 
-//METODOS DE BUSCA Y TRANSFORMACION -----------------------------------------------------------------------------------
+//METODOS DE BUSCA Y TRANSFORMACION (son funciones de orden superior) --------------------------------------
 
-const numeros = [1, 2, 3, 4, 5, 6];
+// forEach() itera el array y por cada elemento cumple lo que hayamos pasado por parámetro, como en el jemplo anterior de porCadaUno. 
+
+/* const numeros = [1, 2, 3, 4, 5, 6];
 
 numeros.forEach((num) => {
     document.write(num + `<br>`);
@@ -962,4 +964,165 @@ let librosHarryPotter = [{
 
 librosHarryPotter.forEach((num) => {
     document.write(num.titulo + num.fecha +`<br>`);
+}) */
+
+//Find() recibe una función flecha comparadora. Devuelve el primero que encuentra con un return implicito. Sino encuentra, devuelve undefined, no false.
+
+/* const cursos = [{
+    nombre: 'javaScript',
+    precio: 15000
+}, {
+    nombre: 'ReactJs',
+    precio: 20000
+}, {
+    nombre: 'DesarrolloWeb',
+    precio: 15000
+}, {
+    nombre: 'TestingQA',
+    precio: 18000
+}];
+
+const encontrado = cursos.find((curso)=> curso.precio > 16000);
+console.log(encontrado); */
+
+//Filter() recibe una función flecha comparadora y retorna un nuevo array con los elementos que cumplan esa condición. >Sino encuentra, devuelve un array vacío. 
+
+/* const cursos = [{
+    nombre: 'javaScript',
+    precio: 15000
+}, {
+    nombre: 'ReactJs',
+    precio: 20000
+}, {
+    nombre: 'DesarrolloWeb',
+    precio: 15000
+}, {
+    nombre: 'TestingQA',
+    precio: 18000
+}];
+
+const filtrado = cursos.filter((curso)=> curso.precio > 16000);
+console.log(filtrado);
+
+const inFiltrado = cursos.filter((curso)=> curso.precio < 10000);
+console.log(inFiltrado); */
+
+// some() funciona igual que find() solo que devuelve true o false
+
+/* const cursos = [{
+    nombre: 'javaScript',
+    precio: 15000
+}, {
+    nombre: 'ReactJs',
+    precio: 20000
+}, {
+    nombre: 'DesarrolloWeb',
+    precio: 15000
+}, {
+    nombre: 'TestingQA',
+    precio: 18000
+}];
+
+const hayAlguno = cursos.some((curso)=> curso.nombre == 'javaScript');
+console.log(hayAlguno);
+
+const noHayAlguno = cursos.some((curso)=> curso.nombre == 'Python');
+console.log(noHayAlguno); */
+
+// al devolver un boolean, podemos tomarlo para algo que sigue, ya que hace un break. 
+
+// map() crea un nuevo array con todos los elementos del original, pero aplicandole la operación que hayamos pasado en el parametro. 
+
+/* const cursos = [{
+    nombre: 'javaScript',
+    precio: 15000
+}, {
+    nombre: 'ReactJs',
+    precio: 20000
+}, {
+    nombre: 'DesarrolloWeb',
+    precio: 15000
+}, {
+    nombre: 'TestingQA',
+    precio: 18000
+}];
+
+const todosLosNombres = cursos.map((curso)=> curso.nombre);
+console.log(todosLosNombres);
+
+const preciosConIVA = cursos.map((curso)=> curso.precio*1.21);
+console.log(preciosConIVA);
+//acá le sumamos el IVA a todos
+
+const precioBeca = cursos.map((curso)=>{
+    return{
+        nombre: curso.nombre,
+        precio: curso.precio*.30
+    }
 })
+//aca le aplicamos un descuento del 70 %
+console.log(precioBeca); */
+
+// reduce() nos permite obtener un unico valor tras iterar el array. Funciona como un meotdo que resume el array a un unico valor de retorno. Lo podemos usar cuando queremos una suma de alguna propiedad de los elementos, cuando deseamos obtener algún resultado general de todo el array. Este método recibe dos parámetros. El primer parámetro es la función que itera y acumula, el segundo parámetro es el valor inicial del acumulador. 
+
+/* const cursos = [{
+    nombre: 'javaScript',
+    precio: 15000
+}, {
+    nombre: 'ReactJs',
+    precio: 20000
+}, {
+    nombre: 'DesarrolloWeb',
+    precio: 15000
+}, {
+    nombre: 'TestingQA',
+    precio: 18000
+}];
+
+const total = cursos.reduce((acumulador, num)=> acumulador + num.precio, 0);
+console.log(total); */
+// esto es utilizado, por ejemplo, para calcular la compra total en un carrito, mddaa
+
+// sort() METODO DESTRUCTIVO, nos permite reordenar un array según el criterio que definamos. Recibe una función de comparación por parámetro que, a su vez, recibe dos elementos del array. La función retorna un valor numérico (1, -1, 0) que indica qué elemento se posiciona antes o despues. Este método destruye nuestro array, hace MALABARES y nos devuelve un nuevo array. NO SE USA COMO FILTRO. 
+
+const numeros = [20, 45, 80, 1, 0, 34, 76, 22, 98, 21]
+console.log(numeros);
+
+numeros.sort((a,b)=> a - b);
+console.log(numeros);
+//forma ascendente
+
+numeros.sort((a,b)=> b - a);
+console.log(numeros);
+//forma descendente
+
+//para ordenar strings
+
+const cursos = [{
+    nombre: 'JavaScript',
+    precio: 15000
+}, {
+    nombre: 'ReactJs',
+    precio: 20000
+}, {
+    nombre: 'DesarrolloWeb',
+    precio: 15000
+}, {
+    nombre: 'TestingQA',
+    precio: 18000
+}];
+
+
+cursos.sort((a,b)=>{
+    if (a.nombre > b.nombre){
+        return 1;
+    }
+
+    if (a.nombre < b.nombre){
+        return -1;
+    } 
+
+    return 0;
+})
+
+console.log(cursos);
