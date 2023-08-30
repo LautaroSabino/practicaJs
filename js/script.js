@@ -1085,7 +1085,7 @@ console.log(total); */
 
 // sort() METODO DESTRUCTIVO, nos permite reordenar un array según el criterio que definamos. Recibe una función de comparación por parámetro que, a su vez, recibe dos elementos del array. La función retorna un valor numérico (1, -1, 0) que indica qué elemento se posiciona antes o despues. Este método destruye nuestro array, hace MALABARES y nos devuelve un nuevo array. NO SE USA COMO FILTRO. 
 
-const numeros = [20, 45, 80, 1, 0, 34, 76, 22, 98, 21]
+/* const numeros = [20, 45, 80, 1, 0, 34, 76, 22, 98, 21]
 console.log(numeros);
 
 numeros.sort((a,b)=> a - b);
@@ -1093,12 +1093,12 @@ console.log(numeros);
 //forma ascendente
 
 numeros.sort((a,b)=> b - a);
-console.log(numeros);
+console.log(numeros); */
 //forma descendente
 
 //para ordenar strings
 
-const cursos = [{
+/* const cursos = [{
     nombre: 'JavaScript',
     precio: 15000
 }, {
@@ -1125,4 +1125,50 @@ cursos.sort((a,b)=>{
     return 0;
 })
 
-console.log(cursos);
+console.log(cursos); */
+
+// OBJETO Math ------------------------------------------------------------------------------------
+
+/* console.log(Math.E); //constante Euler
+console.log(Math.PI); // numero PI
+console.log(Math.sqrt(9)); // raíz cuadrada
+
+let azar = Math.random()
+let azar1a10 = Math.random() * 10
+
+console.log(azar1a10);
+console.log(Math.ceil(azar1a10)); //redondea para arriba
+console.log(Math.floor(azar1a10)); // redondea para abajo
+console.log(Math.round(azar1a10)); // se fija cual es el más cerca
+//esto es para un dado, por ejemplo, genera numeros al azar y los redondea. 
+
+//con todo esto, hacemos una generala
+
+const dados = [];
+
+for (i = 0; i < 5; i++) {
+    let dado = Math.ceil(Math.random()*6)
+    dados.push(dado);
+}
+
+console.log(dados); */
+
+// clase DATE -----------------------------------------------------------------------------------
+
+let fechaActual = new Date();
+console.log(fechaActual);
+
+//tener en cuenta que el mes de enero es el 0, no el 1- 
+let fechaSimple = new Date(2023, 7, 30);
+console.log(fechaSimple);
+
+let ultimoSegundoDelAnio = new Date(2023, 11, 31, 23, 59, 59);
+console.log(ultimoSegundoDelAnio);
+
+let casiNavidad = new Date(('December 2023, 24 23:59:59 '));
+console.log(casiNavidad);
+console.log(casiNavidad.getFullYear()); //esto no pasa el año a un valor numerico. 
+console.log(casiNavidad.getMonth() +1);
+console.log(casiNavidad.getDay());
+console.log(casiNavidad.getDate());
+console.log(casiNavidad.toString());
