@@ -1177,10 +1177,10 @@ console.log(casiNavidad.toString()); */
 
 const obtenerInformacion = (materia) => {
     let materias = {
-        fisica: ['Olivad', 'Lucía', 'Octavio', 'Franco', 'Bastian'],
+        fisica: ['Olivad', 'Octavio', 'Franco', 'Bastian'],
         quimica: ['Aurora', 'Lucía', 'Martín', 'Octavio'],
         logica: ['Henrir', 'Lucía', 'Martín', 'Octavio', 'Franco', 'Bastian'],
-        programacion: ['Fazio', 'Lucía', 'Martín', 'Octavio', 'Franco', 'Bastian']
+        programacion: ['Fazio', 'Lucía', 'Martín', 'Octavio', 'Franco']
     }
 
     if (materias[materia] !== undefined) {
@@ -1203,11 +1203,6 @@ const mostrarInfo = (materia) => {
     }
 }
 
-mostrarInfo('fisica');
-mostrarInfo('quimica');
-mostrarInfo('logica');
-mostrarInfo('programacion');
-
 const cantidadClases = (alumno) => {
     let informacion = obtenerInformacion();
     let cantidadTotal = 0;
@@ -1216,7 +1211,16 @@ const cantidadClases = (alumno) => {
             cantidadTotal++
         }
     }
-    return cantidadTotal;
+    return `${alumno} está en ${cantidadTotal} clases.` + `<br>`;
 }
 
-document.write(cantidadClases('Lucia'))
+mostrarInfo('fisica');
+mostrarInfo('quimica');
+mostrarInfo('logica');
+mostrarInfo('programacion');
+
+document.write(cantidadClases('Franco'))
+document.write(cantidadClases('Lucía'))
+document.write(cantidadClases('Martín'))
+document.write(cantidadClases('Octavio'))
+document.write(cantidadClases('Bastian'))
