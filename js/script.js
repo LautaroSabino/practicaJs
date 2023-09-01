@@ -1155,7 +1155,7 @@ console.log(dados); */
 
 // clase DATE -----------------------------------------------------------------------------------
 
-let fechaActual = new Date();
+/* let fechaActual = new Date();
 console.log(fechaActual);
 
 //tener en cuenta que el mes de enero es el 0, no el 1- 
@@ -1171,4 +1171,52 @@ console.log(casiNavidad.getFullYear()); //esto no pasa el año a un valor numeri
 console.log(casiNavidad.getMonth() +1);
 console.log(casiNavidad.getDay());
 console.log(casiNavidad.getDate());
-console.log(casiNavidad.toString());
+console.log(casiNavidad.toString()); */
+
+// EJERCICIO aplicando algunas de las cosas anteriores. 
+
+const obtenerInformacion = (materia) => {
+    let materias = {
+        fisica: ['Olivad', 'Lucía', 'Octavio', 'Franco', 'Bastian'],
+        quimica: ['Aurora', 'Lucía', 'Martín', 'Octavio'],
+        logica: ['Henrir', 'Lucía', 'Martín', 'Octavio', 'Franco', 'Bastian'],
+        programacion: ['Fazio', 'Lucía', 'Martín', 'Octavio', 'Franco', 'Bastian']
+    }
+
+    if (materias[materia] !== undefined) {
+        return [materias[materia], materia, materias];
+    } else {
+        return materias;
+    }
+}
+
+
+const mostrarInfo = (materia) => {
+    let informacion = obtenerInformacion(materia);
+    console.log(informacion);
+
+    if (informacion !== false) {
+        let profesor = informacion[0][0];
+        let alumnos = informacion[0];
+        alumnos.shift();
+        document.write(`El profesor de ${informacion[1]} es ${profesor} y los alumnos son ${alumnos} <br> <br>`)
+    }
+}
+
+mostrarInfo('fisica');
+mostrarInfo('quimica');
+mostrarInfo('logica');
+mostrarInfo('programacion');
+
+const cantidadClases = (alumno) => {
+    let informacion = obtenerInformacion();
+    let cantidadTotal = 0;
+    for (info in informacion) {
+        if (informacion[info].includes(alumno)) {
+            cantidadTotal++
+        }
+    }
+    return cantidadTotal;
+}
+
+document.write(cantidadClases('Lucia'))
