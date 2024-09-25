@@ -5,31 +5,37 @@ ves? son dos lineas o mas */
 
 //VARIABLES: STRING, NUMBER, BOOLEAN. ---------------------------------------------
 
-/* let userName = "Lautaro";
-const userLastName = "Sabino";
-let age = 34;
-let value = true;
-let quote = 'esta es una cadena de caracteres'
+// let userName = "Lautaro";
+// const userLastName = "Sabino";
+// let age = 34;
+// let value = true;
+// let quote = 'esta es una cadena de caracteres'
 
 
 // OPERACIONES CON VARIABLES. ---------------------------------------------------
 
-let numA = 25;
-let numB = 35;
-let resultado = numA % numB;
+// let numA = 25;
+// let numB = 35;
+// let resultado = numA + numB;
+
+// let nomnre1 = "Lau ";
+// let apellido1 = "Sabino ";
+// let nombreCompleto = nomnre1 + apellido1;
+// console.log(nombreCompleto);
+
 
 // CONCATENACIÓN. ----------------------------------------------------------------
 
-let userNameComplete = userName + " " + userLastName; */
+// let userNameComplete = userName + " " + userLastName; 
 
-/* let userName = prompt('ingresá tu nombre:');
+let userName = prompt('ingresá tu nombre:');
 let userLastName = prompt('ingrese su apellido:');
 let userAge = parseInt(prompt('ingresa tu edad:'));
 
 let userAgeNextYear = userAge + 1;
 console.log(userName);
 console.log(userLastName);
-console.log('La edad del usuario dentro de un año será, mdda: ' + userAgeNextYear); */
+console.log('La edad del usuario dentro de un año será, mdda: ' + userAgeNextYear); 
 
 //ESTRUCTURA IF, IF ELSE. -----------------------------------------------------------
 
@@ -1175,52 +1181,52 @@ console.log(casiNavidad.toString()); */
 
 // EJERCICIO aplicando algunas de las cosas anteriores. 
 
-const obtenerInformacion = (materia) => {
-    let materias = {
-        fisica: ['Olivad', 'Octavio', 'Franco', 'Bastian'],
-        quimica: ['Aurora', 'Lucía', 'Martín', 'Octavio'],
-        logica: ['Henrir', 'Lucía', 'Martín', 'Octavio', 'Franco', 'Bastian'],
-        programacion: ['Fazio', 'Lucía', 'Martín', 'Octavio', 'Franco']
-    }
+// const obtenerInformacion = (materia) => {
+//     let materias = {
+//         fisica: ['Olivad', 'Octavio', 'Franco', 'Bastian'],
+//         quimica: ['Aurora', 'Lucía', 'Martín', 'Octavio'],
+//         logica: ['Henrir', 'Lucía', 'Martín', 'Octavio', 'Franco', 'Bastian'],
+//         programacion: ['Fazio', 'Lucía', 'Martín', 'Octavio', 'Franco']
+//     }
 
-    if (materias[materia] !== undefined) {
-        return [materias[materia], materia, materias];
-    } else {
-        return materias;
-    }
-}
+//     if (materias[materia] !== undefined) {
+//         return [materias[materia], materia, materias];
+//     } else {
+//         return materias;
+//     }
+// }
 
 
-const mostrarInfo = (materia) => {
-    let informacion = obtenerInformacion(materia);
-    console.log(informacion);
+// const mostrarInfo = (materia) => {
+//     let informacion = obtenerInformacion(materia);
+//     console.log(informacion);
 
-    if (informacion !== false) {
-        let profesor = informacion[0][0];
-        let alumnos = informacion[0];
-        alumnos.shift();
-        document.write(`El profesor de ${informacion[1]} es ${profesor} y los alumnos son ${alumnos} <br> <br>`)
-    }
-}
+//     if (informacion !== false) {
+//         let profesor = informacion[0][0];
+//         let alumnos = informacion[0];
+//         alumnos.shift();
+//         document.write(`El profesor de ${informacion[1]} es ${profesor} y los alumnos son ${alumnos} <br> <br>`)
+//     }
+// }
 
-const cantidadClases = (alumno) => {
-    let informacion = obtenerInformacion();
-    let cantidadTotal = 0;
-    for (info in informacion) {
-        if (informacion[info].includes(alumno)) {
-            cantidadTotal++
-        }
-    }
-    return `${alumno} está en ${cantidadTotal} clases.` + `<br>`;
-}
+// const cantidadClases = (alumno) => {
+//     let informacion = obtenerInformacion();
+//     let cantidadTotal = 0;
+//     for (info in informacion) {
+//         if (informacion[info].includes(alumno)) {
+//             cantidadTotal++
+//         }
+//     }
+//     return `${alumno} está en ${cantidadTotal} clases.` + `<br>`;
+// }
 
-mostrarInfo('fisica');
-mostrarInfo('quimica');
-mostrarInfo('logica');
-mostrarInfo('programacion');
+// mostrarInfo('fisica');
+// mostrarInfo('quimica');
+// mostrarInfo('logica');
+// mostrarInfo('programacion');
 
-document.write(cantidadClases('Franco'))
-document.write(cantidadClases('Lucía'))
-document.write(cantidadClases('Martín'))
-document.write(cantidadClases('Octavio'))
-document.write(cantidadClases('Bastian'))
+// document.write(cantidadClases('Franco'))
+// document.write(cantidadClases('Lucía'))
+// document.write(cantidadClases('Martín'))
+// document.write(cantidadClases('Octavio'))
+// document.write(cantidadClases('Bastian'))
